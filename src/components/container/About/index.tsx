@@ -1,9 +1,12 @@
 import { motion } from 'framer-motion'
 import portfolio2 from '../../../assets/portfolio2.jpeg'
+import { useAge } from '../../../hooks/useAge'
 import { bios } from '../../../utils/about'
 import './about.scss'
 
 export default function About() {
+   const { age } = useAge()
+
    return (
       <div className="container" id="about">
          <motion.div
@@ -34,12 +37,12 @@ export default function About() {
                transition={{ duration: 1 }}
             >
                <p>
-                  Sou um desenvolvedor fullstack com 24 anos de idade, especializado nas linguagens
-                  de programação ReactJs, NextJs, React-Native, NodeJs, AdonisJs e TypeScript.
-                  Sempre busco evoluir minhas habilidades e conhecimentos na programação,
-                  trabalhando em projetos desafiantes e buscando soluções inovadoras para problemas
-                  complexos. Além disso, sou uma pessoa dedicada e apaixonada pelo que faço, sempre
-                  buscando aprender e evoluir continuamente.
+                  Sou um desenvolvedor fullstack com {age} anos de idade, especializado nas
+                  linguagens de programação ReactJs, NextJs, React-Native, NodeJs, AdonisJs e
+                  TypeScript. Sempre busco evoluir minhas habilidades e conhecimentos na
+                  programação, trabalhando em projetos desafiantes e buscando soluções inovadoras
+                  para problemas complexos. Além disso, sou uma pessoa dedicada e apaixonada pelo
+                  que faço, sempre buscando aprender e evoluir continuamente.
                </p>
 
                {bios.map((bio) => {
