@@ -20,7 +20,7 @@ export default function Home() {
                Olá, Eu sou o <span>Gilberto Fortunato</span>
             </h3>
             <span className="job">Fullstack Developer</span>
-            <span className="text">Apreciador do mundo da tecnologia e programação.</span>
+            <span className="text">Transformando ideias em realidade, programando o futuro!</span>
             <motion.a
                href="#contact"
                whileHover={{ scale: 1.1 }}
