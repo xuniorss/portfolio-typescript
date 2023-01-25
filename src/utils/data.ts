@@ -21,7 +21,7 @@ import { SiTypescript } from 'react-icons/si'
 
 import { IconsProps } from './../models/Navbar/index'
 
-export const navLinks = ['Início', 'Sobre', 'Habilidades', 'Portfolio', 'Contato']
+export const navLinks = ['home', 'about', 'skills', 'portfolio', 'contact']
 
 export const socialIcons: IconsProps[] = [
    { icon: FaDribbble },

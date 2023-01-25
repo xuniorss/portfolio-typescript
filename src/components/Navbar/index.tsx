@@ -1,5 +1,5 @@
-import { animate, motion } from 'framer-motion'
-import { useState } from 'react'
+import { motion } from 'framer-motion'
+import { useEffect, useState } from 'react'
 
 import { menuVariants, navLinks, navLinkVariants, socialIcons } from '../../utils/data'
 
@@ -7,9 +7,15 @@ import './navbar.scss'
 
 import { HiMenuAlt4, HiX } from 'react-icons/hi'
 
-export const Navbar = () => {
+export default function Navbar() {
    const [scroll, setScroll] = useState(false)
    const [toggle, setToggle] = useState(false)
+
+   useEffect(() => {
+      window.addEventListener('scroll', () => {
+         setScroll(window.scrollY > 20)
+      })
+   }, [])
 
    return (
       <motion.div
