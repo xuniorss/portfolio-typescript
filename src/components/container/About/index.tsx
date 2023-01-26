@@ -68,15 +68,14 @@ export default function About() {
                })}
                <motion.a
                   href={download}
-                  download="curriculoGilberto.pdf"
+                  // download="curriculoGilberto.pdf"
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.3 }}
-                  // onClick={getResume}
+                  onClick={getResume}
+                  target="_blank"
                >
-                  Download Currículo
+                  Ver Currículo
                </motion.a>
-
-               <button onClick={getResume}>dasda</button>
             </motion.div>
          </div>
       </div>
