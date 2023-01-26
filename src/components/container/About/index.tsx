@@ -1,11 +1,34 @@
+import { initializeApp } from 'firebase/app'
+import { getDownloadURL, getStorage, ref, listAll } from 'firebase/storage'
 import { motion } from 'framer-motion'
+import { useState } from 'react'
 import portfolio2 from '../../../assets/portfolio2.jpeg'
 import { useAge } from '../../../hooks/useAge'
+import firebaseConfig from '../../../services/api/firebase'
 import { bios } from '../../../utils/about'
 import './about.scss'
 
 export default function About() {
+   const [download, setDownload] = useState('')
    const { age } = useAge()
+   initializeApp(firebaseConfig)
+
+   const getResume = async () => {
+      const storage = getStorage()
+      const reference = ref(storage, 'gs://portfolio-26b59.appspot.com/curriculoGilberto.pdf')
+
+      try {
+         await getDownloadURL(reference)
+            .then((url) => {
+               setDownload(url)
+            })
+            .catch((err) => {
+               console.log(err)
+            })
+      } catch (error) {
+         console.log('error catch', error)
+      }
+   }
 
    return (
       <div className="container" id="about">
@@ -57,10 +80,11 @@ export default function About() {
                   )
                })}
                <motion.a
-                  href="#"
-                  download=""
+                  href={download}
+                  download="curriculoGilberto.pdf"
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.3 }}
+                  onClick={getResume}
                >
                   Download Currículo
                </motion.a>
