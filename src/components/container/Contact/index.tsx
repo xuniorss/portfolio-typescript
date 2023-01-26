@@ -54,11 +54,11 @@ export default function Contact() {
             >
                <h3>Entrar em contato</h3>
                <div className="row">
-                  <input type="text" placeholder="First Name" />
-                  <input type="text" placeholder="Last name" />
+                  <input type="text" placeholder="Nome" />
+                  <input type="text" placeholder="Sobrenome" />
                </div>
                <div className="row">
-                  <input type="text" placeholder="Phone" />
+                  <input type="text" placeholder="Número para contato" />
                   <input type="email" placeholder="Email" />
                </div>
                <div className="row">
