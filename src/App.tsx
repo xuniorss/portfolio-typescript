@@ -1,4 +1,5 @@
 import About from './components/container/About'
+import Contact from './components/container/Contact'
 import Home from './components/container/Home'
 import Portfolio from './components/container/Portfolio'
 import Skills from './components/container/Skills'
@@ -13,6 +14,7 @@ export default function App() {
          <About />
          <Skills />
          <Portfolio />
+         <Contact />
       </div>
    )
 }

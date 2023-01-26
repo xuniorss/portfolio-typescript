@@ -37,18 +37,17 @@ export const finishes: Array<FinishesProps> = [
 ]
 
 export const graduations: Array<GraduationsProps> = [
-   // { id: 1, year: '2009', academy: 'Micro-Way', course: 'Computação' },
-   // { id: 2, year: '2010', academy: 'Micro-Way', course: 'Hardware' },
-   // { id: 3, year: '2015', academy: 'SENAI', course: 'Técnico em eletroeletrônica' },
+   { id: 1, year: '2009', academy: 'Micro-Way', course: 'Computação' },
+   { id: 2, year: '2010', academy: 'Micro-Way', course: 'Hardware' },
+   { id: 3, year: '2015', academy: 'SENAI', course: 'Técnico em eletroeletrônica' },
    {
       id: 4,
       year: '2019',
       academy: 'Uni Salesiano',
       course: 'Análise e desenvolvimento de software',
    },
-   { id: 5, year: '2022', academy: 'Udemy', course: 'ReactJs, React Native e NextJs' },
-   { id: 6, year: '2022', academy: 'Udemy', course: 'NodeJs com Express' },
-   // { id: 7, year: '2022', academy: 'Udemy', course: 'Typescript' },
-   // { id: 8, year: '2022', academy: 'Udemy', course: 'React Native' },
-   { id: 9, year: '2022', academy: 'Udemy', course: 'AdonisJs' },
+   { id: 5, year: '2022', academy: 'Udemy', course: 'ReactJs, React Native, NextJs & Typescript' },
+   { id: 6, year: '2022', academy: 'Udemy', course: 'NodeJs com Express & AdonisJs' },
+   // { id: 7, year: '2022', academy: 'Udemy', course: '' },
+   // { id: 9, year: '2022', academy: 'Udemy', course: 'AdonisJs' },
 ]
