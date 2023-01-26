@@ -2,7 +2,12 @@ import { FaCss3, FaFigma, FaHtml5, FaNodeJs, FaReact, FaSass } from 'react-icons
 
 import { SiAdonisjs, SiJavascript, SiPostgresql, SiTypescript } from 'react-icons/si'
 import { TbBrandNextjs, TbBrandReactNative } from 'react-icons/tb'
-import { ExperiencesProps, FinishesProps, IconsPropsSkills } from '../../models/Skills'
+import {
+   ExperiencesProps,
+   FinishesProps,
+   GraduationsProps,
+   IconsPropsSkills,
+} from '../../models/Skills'
 
 export const icons: Array<IconsPropsSkills> = [
    { icon: FaHtml5 },
@@ -25,6 +30,25 @@ export const experiences: Array<ExperiencesProps> = [
 ]
 
 export const finishes: Array<FinishesProps> = [
-   { id: 1, number: '3+', itemName: 'Anos de experiência como programador' },
-   { id: 2, number: '7+', itemName: 'Meses de experiência como Fullstack developer' },
+   { id: 1, number: '3+', itemName: 'Anos como programador' },
+   { id: 2, number: '7+', itemName: 'Meses como Fullstack developer' },
+   { id: 3, number: '900+', itemName: 'Commits no Github' },
+   { id: 4, number: '10+', itemName: 'Cursos certificados concluídos' },
+]
+
+export const graduations: Array<GraduationsProps> = [
+   // { id: 1, year: '2009', academy: 'Micro-Way', course: 'Computação' },
+   // { id: 2, year: '2010', academy: 'Micro-Way', course: 'Hardware' },
+   // { id: 3, year: '2015', academy: 'SENAI', course: 'Técnico em eletroeletrônica' },
+   {
+      id: 4,
+      year: '2019',
+      academy: 'Uni Salesiano',
+      course: 'Análise e desenvolvimento de software',
+   },
+   { id: 5, year: '2022', academy: 'Udemy', course: 'ReactJs, React Native e NextJs' },
+   { id: 6, year: '2022', academy: 'Udemy', course: 'NodeJs com Express' },
+   // { id: 7, year: '2022', academy: 'Udemy', course: 'Typescript' },
+   // { id: 8, year: '2022', academy: 'Udemy', course: 'React Native' },
+   { id: 9, year: '2022', academy: 'Udemy', course: 'AdonisJs' },
 ]

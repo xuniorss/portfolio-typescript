@@ -50,13 +50,15 @@
    }
 }
 
-.experiencs {
+.experiencs,
+.graduation {
    max-width: 500px;
    margin-left: auto;
    margin-right: auto;
    color: white;
 
-   .experience {
+   .experience,
+   .graduations {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -71,7 +73,8 @@
          }
       }
 
-      .position {
+      .position,
+      .course {
          width: 300px;
          padding-left: 2.5rem;
 

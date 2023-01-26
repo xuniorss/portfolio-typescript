@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
-import { experiences, finishes, icons } from '../../../utils/skills'
+import { experiences, finishes, graduations, icons } from '../../../utils/skills'
 import './skills.scss'
 
 export default function Skills() {
@@ -26,6 +26,9 @@ export default function Skills() {
             </button>
             <button onClick={() => setActive(2)} className={active === 2 ? 'active' : ''}>
                Experiências
+            </button>
+            <button onClick={() => setActive(3)} className={active === 3 ? 'active' : ''}>
+               Graduções e cursos
             </button>
          </motion.div>
          <motion.div
@@ -57,6 +60,25 @@ export default function Skills() {
                         <div className="position">
                            <h3>{experience.position}</h3>
                            <p>{experience.company}</p>
+                        </div>
+                     </div>
+                  )
+               })}
+         </motion.div>
+
+         <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ y: [-50, 0], opacity: 1 }}
+            className="graduation"
+         >
+            {active === 3 &&
+               graduations.map((graduation) => {
+                  return (
+                     <div className="graduations" key={graduation.id}>
+                        <span>{graduation.year}</span>
+                        <div className="course">
+                           <h3>{graduation.course}</h3>
+                           <p>{graduation.academy}</p>
                         </div>
                      </div>
                   )

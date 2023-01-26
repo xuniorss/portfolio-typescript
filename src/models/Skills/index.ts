@@ -16,3 +16,10 @@ export interface FinishesProps {
    number: string
    itemName: string
 }
+
+export interface GraduationsProps {
+   id: number
+   year: string
+   course: string
+   academy: string
+}
