@@ -70,5 +70,9 @@
             "label": "Send"
          }
       }
+   },
+   "footer": {
+      "p": "All rights reserved. Made by",
+      "followMe": "Follow me"
    }
 }

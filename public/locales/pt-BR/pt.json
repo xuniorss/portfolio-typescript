@@ -70,5 +70,9 @@
             "label": "Enviar"
          }
       }
+   },
+   "footer": {
+      "p": "Todos os direitos reservados. Feito por",
+      "followMe": "Siga-me"
    }
 }
