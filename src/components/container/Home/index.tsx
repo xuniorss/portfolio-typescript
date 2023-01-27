@@ -2,14 +2,12 @@ import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import '../../../../public/locales/i18n'
 import portfolio from '../../../assets/portfolio.jpg'
-import { useTypewriter } from '../../../hooks/useTypewriter'
 import { moveVariants } from '../../../utils/home'
 import { TypewriterComponent } from '../../Typewriter'
 import './home.scss'
 
 export default function Home() {
    const { t } = useTranslation('home')
-   const { cursor } = useTypewriter()
 
    return (
       <motion.div
