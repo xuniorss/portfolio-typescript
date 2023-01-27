@@ -1,6 +1,6 @@
 import { getDownloadURL, ref } from 'firebase/storage'
 import { motion } from 'framer-motion'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import portfolio2 from '../../../assets/portfolio2.jpeg'
 import { useAge } from '../../../hooks/useAge'
 import storage from '../../../services/api/firebase'
@@ -11,11 +11,11 @@ export default function About() {
    const [download, setDownload] = useState('')
    const { age } = useAge()
 
-   const getResume = async () => {
+   useEffect(() => {
       getDownloadURL(ref(storage, 'curriculoGilberto.pdf')).then((url) => {
          setDownload(url)
       })
-   }
+   }, [])
 
    return (
       <div className="container" id="about">
@@ -71,7 +71,6 @@ export default function About() {
                   // download="curriculoGilberto.pdf"
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.3 }}
-                  onClick={getResume}
                   target="_blank"
                >
                   Ver Currículo
