@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion'
 import { MouseEvent, useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
+import { FiEye, FiGithub } from 'react-icons/fi'
+import '../../../../public/locales/i18n'
 import { workImagesProps, workNavs } from '../../../models/Portfolio'
 import { workImages } from '../../../utils/portfolio'
 import './portfolio.scss'
-import { FiEye, FiGithub } from 'react-icons/fi'
-import { useTranslation } from 'react-i18next'
-import '../../../../public/locales/i18n'
 
 export default function Portfolio() {
    const [active, setActive] = useState(0)

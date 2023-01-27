@@ -1,12 +1,15 @@
 import { motion } from 'framer-motion'
-import portfolio from '../../../assets/portfolio.jpg'
-import { moveVariants } from '../../../utils/home'
-import './home.scss'
 import { useTranslation } from 'react-i18next'
 import '../../../../public/locales/i18n'
+import portfolio from '../../../assets/portfolio.jpg'
+import { useTypewriter } from '../../../hooks/useTypewriter'
+import { moveVariants } from '../../../utils/home'
+import { TypewriterComponent } from '../../Typewriter'
+import './home.scss'
 
 export default function Home() {
    const { t } = useTranslation('home')
+   const { cursor } = useTypewriter()
 
    return (
       <motion.div
@@ -24,7 +27,9 @@ export default function Home() {
                {t('title')} <span>Gilberto Fortunato</span>
             </h3>
             <span className="job">Fullstack Developer</span>
-            <span className="text">{t('slogan')}</span>
+            <span className="text">
+               <TypewriterComponent text={t('slogan')} />
+            </span>
             <motion.a
                href="#contact"
                whileHover={{ scale: 1.1 }}
