@@ -5,5 +5,15 @@
       "button": {
          "label": "Conecte-Se Comigo"
       }
+   },
+   "about": {
+      "title": "QUEM SOU EU ?",
+      "description": "Sobre mim",
+      "text1": "Sou um desenvolvedor fullstack com",
+      "text2": "anos de idade, especializado nas linguagens de programação ReactJs, NextJs, React-Native, NodeJs, AdonisJs e TypeScript. Sempre busco evoluir minhas habilidades e conhecimentos na programação, trabalhando em projetos desafiantes e buscando soluções inovadoras para problemas complexos. Além disso, sou uma pessoa dedicada e apaixonada pelo que faço, sempre buscando aprender e evoluir continuamente.",
+      "label-name": "Nome",
+      "button": {
+         "label": "Ver Currículo"
+      }
    }
 }

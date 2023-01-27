@@ -6,10 +6,13 @@ import { useAge } from '../../../hooks/useAge'
 import storage from '../../../services/api/firebase'
 import { bios } from '../../../utils/about'
 import './about.scss'
+import { useTranslation } from 'react-i18next'
+import '../../../../public/locales/i18n'
 
 export default function About() {
    const [download, setDownload] = useState('')
    const { age } = useAge()
+   const { t } = useTranslation('about')
 
    useEffect(() => {
       getDownloadURL(ref(storage, 'curriculoGilberto.pdf')).then((url) => {
@@ -24,8 +27,8 @@ export default function About() {
             initial={{ opacity: 0 }}
             whileInView={{ y: [-50, 0], opacity: 1 }}
          >
-            <span>Quem sou eu ?</span>
-            <h1>Sobre mim</h1>
+            <span>{t('title')}</span>
+            <h1>{t('description')}</h1>
          </motion.div>
          <div className="about_container">
             <motion.div
@@ -47,12 +50,7 @@ export default function About() {
                transition={{ duration: 1 }}
             >
                <p>
-                  Sou um desenvolvedor fullstack com {age} anos de idade, especializado nas
-                  linguagens de programação ReactJs, NextJs, React-Native, NodeJs, AdonisJs e
-                  TypeScript. Sempre busco evoluir minhas habilidades e conhecimentos na
-                  programação, trabalhando em projetos desafiantes e buscando soluções inovadoras
-                  para problemas complexos. Além disso, sou uma pessoa dedicada e apaixonada pelo
-                  que faço, sempre buscando aprender e evoluir continuamente.
+                  {t('text1')} {age} {t('text2')}{' '}
                </p>
 
                {bios.map((bio) => {
@@ -60,7 +58,7 @@ export default function About() {
                   return (
                      <div className="bio" key={bio.id}>
                         <span className="bioKey">
-                           {<Icon />} {bio.key}
+                           {<Icon />} {bio.key === 'Nome' ? `${t('label-name')}` : bio.key}
                         </span>
                         <span className="bioValue">{bio.value}</span>
                      </div>
@@ -73,7 +71,7 @@ export default function About() {
                   transition={{ duration: 0.3 }}
                   target="_blank"
                >
-                  Ver Currículo
+                  {t('button.label')}
                </motion.a>
             </motion.div>
          </div>

@@ -5,5 +5,15 @@
       "button": {
          "label": "Connect With Me"
       }
+   },
+   "about": {
+      "title": "WHO AM I ?",
+      "description": "About me",
+      "text1": "I'm a",
+      "text2": "year old fullstack developer specializing in ReactJs, NextJs, React-Native, NodeJs, AdonisJs and TypeScript programming languages. I always seek to improve my skills and knowledge in programming, working on challenging projects and looking for innovative solutions to complex problems. In addition, I am a dedicated person who is passionate about what I do, always looking to learn and evolve continuously.",
+      "label-name": "Name",
+      "button": {
+         "label": "View Resume"
+      }
    }
 }
