@@ -1,11 +1,12 @@
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 
-import { menuVariants, navLinks, navLinkVariants, socialIcons } from '../../utils/data'
+import { menuVariants, navLinks, navLinkVariants } from '../../utils/data'
 
 import './navbar.scss'
 
 import { HiMenuAlt4, HiX } from 'react-icons/hi'
+import { SocialIcons } from '../SocialIcons'
 
 export default function Navbar() {
    const [scroll, setScroll] = useState(false)
@@ -38,16 +39,7 @@ export default function Navbar() {
                })}
             </ul>
             <div className="social_icons">
-               {socialIcons.map((socialIcon) => {
-                  const Icon = socialIcon.icon
-                  return (
-                     <div key={socialIcon.id}>
-                        <a href={socialIcon.url} target="_blank">
-                           {<Icon />}
-                        </a>
-                     </div>
-                  )
-               })}
+               <SocialIcons />
             </div>
             <div className="menu">
                <HiMenuAlt4 onClick={() => setToggle(true)} />

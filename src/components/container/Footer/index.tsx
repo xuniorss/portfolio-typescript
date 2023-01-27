@@ -1,7 +1,7 @@
-import './footer.scss'
 import { motion } from 'framer-motion'
 import { useAge } from '../../../hooks/useAge'
-import { socialIcons } from '../../../utils/data'
+import { SocialIcons } from '../../SocialIcons'
+import './footer.scss'
 
 export default function Footer() {
    const { currentYear } = useAge()
@@ -25,16 +25,7 @@ export default function Footer() {
             <h4>Siga-me</h4>
             <div className="stick"></div>
             <div className="social_icons">
-               {socialIcons.map((socialIcon) => {
-                  const Icon = socialIcon.icon
-                  return (
-                     <div key={socialIcon.id}>
-                        <a href={socialIcon.url} target="_blank">
-                           {<Icon />}
-                        </a>
-                     </div>
-                  )
-               })}
+               <SocialIcons />
             </div>
          </div>
       </motion.div>
