@@ -38,9 +38,15 @@ export default function Navbar() {
                })}
             </ul>
             <div className="social_icons">
-               {socialIcons.map((socialIcon, index) => {
+               {socialIcons.map((socialIcon) => {
                   const Icon = socialIcon.icon
-                  return <div key={index}>{<Icon />}</div>
+                  return (
+                     <div key={socialIcon.id}>
+                        <a href={socialIcon.url} target="_blank">
+                           {<Icon />}
+                        </a>
+                     </div>
+                  )
                })}
             </div>
             <div className="menu">
