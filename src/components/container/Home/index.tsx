@@ -1,9 +1,13 @@
-import './home.scss'
 import { motion } from 'framer-motion'
 import portfolio from '../../../assets/portfolio.jpg'
 import { moveVariants } from '../../../utils/home'
+import './home.scss'
+import { useTranslation } from 'react-i18next'
+import '../../../../public/locales/i18n'
 
 export default function Home() {
+   const { t } = useTranslation('home')
+
    return (
       <motion.div
          className="container"
@@ -17,17 +21,17 @@ export default function Home() {
          </div>
          <div className="profile_text">
             <h3 className="name">
-               Olá, Eu sou o <span>Gilberto Fortunato</span>
+               {t('title')} <span>Gilberto Fortunato</span>
             </h3>
             <span className="job">Fullstack Developer</span>
-            <span className="text">Transformando ideias em realidade, programando o futuro!</span>
+            <span className="text">{t('slogan')}</span>
             <motion.a
                href="#contact"
                whileHover={{ scale: 1.1 }}
                variants={moveVariants}
                animate="animation"
             >
-               conecte-se comigo
+               {t('button.label')}
             </motion.a>
             <div className="web">Fullstack Developer</div>
             <div className="node">NodeJS + AdonisJS</div>

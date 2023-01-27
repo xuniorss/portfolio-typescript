@@ -4,6 +4,7 @@ import { HiMenuAlt4, HiX } from 'react-icons/hi'
 
 import { menuVariants, navLinks, navLinkVariants } from '../../utils/data'
 import { SocialIcons } from '../SocialIcons'
+import { ChangeLanguage } from './Language/Button'
 import { NavLinksComponent } from './NavLinks'
 
 import './navbar.scss'
@@ -34,6 +35,7 @@ export default function Navbar() {
             </ul>
             <div className="social_icons">
                <SocialIcons />
+               <ChangeLanguage />
             </div>
             <div className="menu">
                <HiMenuAlt4 onClick={() => setToggle(true)} />
