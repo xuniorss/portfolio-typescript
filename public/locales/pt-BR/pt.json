@@ -15,5 +15,26 @@
       "button": {
          "label": "Ver Currículo"
       }
+   },
+   "skills": {
+      "title": "NO QUE SOU ESPECIALISTA ?",
+      "description": "Habilidades e Experiências",
+      "buttons": {
+         "btn1": "Habilidades",
+         "btn2": "Experiências",
+         "btn3": "Graduções E Cursos"
+      },
+      "courses": {
+         "computing": "Computação",
+         "technician": "Técnico em eletroeletrônica",
+         "colege": "Análise e desenvolvimento de sistemas",
+         "nodejs": "NodeJs with Express & AdonisJs"
+      },
+      "finishes": {
+         "programming": "Anos como programador",
+         "month": "Meses como Fullstack developer",
+         "github": "Commits no Github",
+         "courses": "Cursos certificados concluídos"
+      }
    }
 }

@@ -32,7 +32,7 @@ export const experiences: Array<ExperiencesProps> = [
 export const finishes: Array<FinishesProps> = [
    { id: 1, number: '3+', itemName: 'Anos como programador' },
    { id: 2, number: '7+', itemName: 'Meses como Fullstack developer' },
-   { id: 3, number: '945+', itemName: 'Commits no Github' },
+   { id: 3, number: '965+', itemName: 'Commits no Github' },
    { id: 4, number: '10+', itemName: 'Cursos certificados concluídos' },
 ]
 
@@ -44,7 +44,7 @@ export const graduations: Array<GraduationsProps> = [
       id: 4,
       year: '2019',
       academy: 'Uni Salesiano',
-      course: 'Análise e desenvolvimento de software',
+      course: 'Análise e desenvolvimento de sistemas',
    },
    { id: 5, year: '2022', academy: 'Udemy', course: 'ReactJs, React Native, NextJs & Typescript' },
    { id: 6, year: '2022', academy: 'Udemy', course: 'NodeJs com Express & AdonisJs' },

@@ -2,9 +2,14 @@ import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { experiences, finishes, graduations, icons } from '../../../utils/skills'
 import './skills.scss'
+import { useTranslation } from 'react-i18next'
+import '../../../../public/locales/i18n'
+import { GraduationsComponent } from '../../Skills/Graduations'
+import { FinishesComponent } from '../../Skills/Finishes'
 
 export default function Skills() {
    const [active, setActive] = useState(1)
+   const { t } = useTranslation('skills')
 
    return (
       <div className="container" id="skills">
@@ -13,8 +18,8 @@ export default function Skills() {
             whileInView={{ y: [-50, 0], opacity: 1 }}
             className="title"
          >
-            <span>No que sou especialista ?</span>
-            <h1>Habilidades e Experiências</h1>
+            <span>{t('title')}</span>
+            <h1>{t('description')}</h1>
          </motion.div>
          <motion.div
             initial={{ opacity: 0 }}
@@ -22,13 +27,13 @@ export default function Skills() {
             className="select"
          >
             <button onClick={() => setActive(1)} className={active === 1 ? 'active' : ''}>
-               Habilidades
+               {t('buttons.btn1')}
             </button>
             <button onClick={() => setActive(2)} className={active === 2 ? 'active' : ''}>
-               Experiências
+               {t('buttons.btn2')}
             </button>
             <button onClick={() => setActive(3)} className={active === 3 ? 'active' : ''}>
-               Graduções e cursos
+               {t('buttons.btn3')}
             </button>
          </motion.div>
          <motion.div
@@ -71,18 +76,7 @@ export default function Skills() {
             whileInView={{ y: [-50, 0], opacity: 1 }}
             className="graduation"
          >
-            {active === 3 &&
-               graduations.map((graduation) => {
-                  return (
-                     <div className="graduations" key={graduation.id}>
-                        <span>{graduation.year}</span>
-                        <div className="course">
-                           <h3>{graduation.course}</h3>
-                           <p>{graduation.academy}</p>
-                        </div>
-                     </div>
-                  )
-               })}
+            {active === 3 && <GraduationsComponent />}
          </motion.div>
 
          <motion.div
@@ -90,14 +84,7 @@ export default function Skills() {
             whileInView={{ y: [-50, 0], opacity: 1 }}
             className="finishes_container"
          >
-            {finishes.map((finish) => {
-               return (
-                  <div className="finishes" key={finish.id}>
-                     <div className="number">{finish.number}</div>
-                     <h4 className="item_name">{finish.itemName}</h4>
-                  </div>
-               )
-            })}
+            <FinishesComponent />
          </motion.div>
       </div>
    )

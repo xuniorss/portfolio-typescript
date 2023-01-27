@@ -15,5 +15,26 @@
       "button": {
          "label": "View Resume"
       }
+   },
+   "skills": {
+      "title": "WHAT AM I SPECIALIST IN?",
+      "description": "Skills and Experiences",
+      "buttons": {
+         "btn1": "Skills",
+         "btn2": "Experiences",
+         "btn3": "Degrees and Courses"
+      },
+      "courses": {
+         "computing": "Computing",
+         "technician": "Electronics technician",
+         "colege": "Analysis and systems development",
+         "nodejs": "NodeJs with Express & AdonisJs"
+      },
+      "finishes": {
+         "programming": "Years as a programmer",
+         "month": "Months as a Fullstack developer",
+         "github": "Commits on Github",
+         "courses": "Completed certified courses"
+      }
    }
 }
