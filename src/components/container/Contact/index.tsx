@@ -1,9 +1,13 @@
-import './contact.scss'
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
+import '../../../../public/locales/i18n'
 import { contacts } from '../../../utils/contact'
-import { socialIcons } from '../../../utils/data'
+import { SocialIcons } from '../../SocialIcons'
+import './contact.scss'
 
 export default function Contact() {
+   const { t } = useTranslation('contact')
+
    return (
       <div className="container" id="contact">
          <motion.div
@@ -11,8 +15,8 @@ export default function Contact() {
             whileInView={{ y: [-50, 0], opacity: 1 }}
             className="title"
          >
-            <span>Entrar em contato</span>
-            <h1>Contate-me</h1>
+            <span>{t('title')}</span>
+            <h1>{t('description')}</h1>
          </motion.div>
          <div className="contact_form">
             <motion.div
@@ -21,29 +25,20 @@ export default function Contact() {
                transition={{ duration: 1 }}
                className="contact_left_container"
             >
-               <h3>Apenas Diga Oi</h3>
-               <p className="contact_text">
-                  Olá! Meu nome é Gilberto Fortunato e sou desenvolvedor de software. Adoro
-                  trabalhar com tecnologia e sempre busco me atualizar e aprender novas habilidades.
-                  Se você está procurando por alguém para ajudar em seu projeto ou simplesmente quer
-                  conversar sobre tecnologia, eu adoraria conversar com você. Entre em contato
-                  comigo pelo meu e-mail ou redes sociais. Vamos bater um papo!
-               </p>
+               <h3>{t('text-label')}</h3>
+               <p className="contact_text">{t('text')}</p>
                {contacts.map((contact) => {
                   let Icon = contact.icon
                   return (
                      <div className="contact_left" key={contact.id}>
                         <div className="icon">{<Icon />}</div>
-                        <p>{contact.infoText}</p>
+                        <p>{contact.id === 1 ? `${t('contac.city')}` : contact.infoText}</p>
                      </div>
                   )
                })}
 
                <div className="social_icons">
-                  {socialIcons.map((socialIcon, index) => {
-                     let Icon = socialIcon.icon
-                     return <div key={index}>{<Icon />}</div>
-                  })}
+                  <SocialIcons />
                </div>
             </motion.div>
             <motion.div
@@ -52,24 +47,24 @@ export default function Contact() {
                transition={{ duration: 1 }}
                className="contact_right"
             >
-               <h3>Entrar em contato</h3>
+               <h3>{t('form.text')}</h3>
                <div className="row">
-                  <input type="text" placeholder="Nome" />
-                  <input type="text" placeholder="Sobrenome" />
+                  <input type="text" placeholder={`${t('form.name')}`} />
+                  <input type="text" placeholder={`${t('form.sobrenome')}`} />
                </div>
                <div className="row">
-                  <input type="text" placeholder="Número para contato" />
-                  <input type="email" placeholder="Email" />
+                  <input type="text" placeholder={`${t('form.number-contact')}`} />
+                  <input type="email" placeholder={`${t('form.email')}`} />
                </div>
                <div className="row">
-                  <textarea placeholder="message"></textarea>
+                  <textarea placeholder={`${t('form.message')}`}></textarea>
                </div>
                <motion.div
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.3 }}
                   className="btn"
                >
-                  <a href="#">Enviar</a>
+                  <a href="#">{t('form.button.label')}</a>
                </motion.div>
             </motion.div>
          </div>

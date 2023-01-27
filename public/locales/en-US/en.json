@@ -50,5 +50,25 @@
             "label": "Contact me"
          }
       }
+   },
+   "contact": {
+      "title": "GET IN TOUCH",
+      "description": "Contact me",
+      "text-label": "Just Say Hi",
+      "text": "Hey! My name is Gilberto Fortunato and I'm a software developer. I love working with technology and I'm always looking to update myself and learn new skills. If you're looking for someone to help with your project or simply want to talk about technology, I'd love to speak with you. Get in touch with me through my email or social networks. Let's talk!",
+      "contac": {
+         "city": "Guararapes - SP, Brazil"
+      },
+      "form": {
+         "text": "Get in touch",
+         "name": "Name",
+         "sobrenome": "Last name",
+         "number-contact": "Contact number",
+         "email": "Email",
+         "message": "Message",
+         "button": {
+            "label": "Send"
+         }
+      }
    }
 }

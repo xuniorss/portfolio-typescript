@@ -50,5 +50,25 @@
             "label": "Contata-Me"
          }
       }
+   },
+   "contact": {
+      "title": "ENTRAR EM CONTATO",
+      "description": "Contate-me",
+      "text-label": "Apenas Diga Oi",
+      "text": "Olá! Meu nome é Gilberto Fortunato e sou desenvolvedor de software. Adoro trabalhar com tecnologia e sempre busco me atualizar e aprender novas habilidades. Se você está procurando por alguém para ajudar em seu projeto ou simplesmente quer conversar sobre tecnologia, eu adoraria conversar com você. Entre em contato comigo pelo meu e-mail ou redes sociais. Vamos bater um papo!",
+      "contac": {
+         "city": "Guararapes - SP, Brasil"
+      },
+      "form": {
+         "text": "Entrar em contato",
+         "name": "Nome",
+         "sobrenome": "Sobrenome",
+         "number-contact": "Número para contato",
+         "email": "Email",
+         "message": "Mensagem",
+         "button": {
+            "label": "Enviar"
+         }
+      }
    }
 }
