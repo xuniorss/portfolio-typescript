@@ -35,7 +35,7 @@ export default function Navbar() {
             </ul>
             <div className="social_icons">
                <SocialIcons />
-               <ChangeLanguage />
+               {/* <ChangeLanguage /> */}
             </div>
             <div className="menu">
                <HiMenuAlt4 onClick={() => setToggle(true)} />
