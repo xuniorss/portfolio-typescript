@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
+import { HiMenuAlt4, HiX } from 'react-icons/hi'
 
 import { menuVariants, navLinks, navLinkVariants } from '../../utils/data'
+import { SocialIcons } from '../SocialIcons'
+import { NavLinksComponent } from './NavLinks'
 
 import './navbar.scss'
-
-import { HiMenuAlt4, HiX } from 'react-icons/hi'
-import { SocialIcons } from '../SocialIcons'
 
 export default function Navbar() {
    const [scroll, setScroll] = useState(false)
@@ -30,13 +30,7 @@ export default function Navbar() {
                <h3>GF</h3>
             </div>
             <ul className="nav_links">
-               {navLinks.map((navlink, index) => {
-                  return (
-                     <li key={index}>
-                        <a href={`#${navlink}`}>{navlink}</a>
-                     </li>
-                  )
-               })}
+               <NavLinksComponent />
             </ul>
             <div className="social_icons">
                <SocialIcons />
