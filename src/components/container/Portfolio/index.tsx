@@ -4,11 +4,14 @@ import { workImagesProps, workNavs } from '../../../models/Portfolio'
 import { workImages } from '../../../utils/portfolio'
 import './portfolio.scss'
 import { FiEye, FiGithub } from 'react-icons/fi'
+import { useTranslation } from 'react-i18next'
+import '../../../../public/locales/i18n'
 
 export default function Portfolio() {
    const [active, setActive] = useState(0)
    const [tab, setTab] = useState({ name: 'Todos' })
    const [works, setWorks] = useState<workImagesProps[]>([])
+   const { t } = useTranslation('portfolio')
 
    const activeTab = (e: MouseEvent<HTMLButtonElement>, index: number) => {
       if (e.currentTarget) {
@@ -39,8 +42,8 @@ export default function Portfolio() {
             whileInView={{ y: [-50, 0], opacity: 1 }}
             className="title"
          >
-            <span>Meu trabalho</span>
-            <h1>Projetos Incríveis</h1>
+            <span>{t('title')}</span>
+            <h1>{t('description')}</h1>
          </motion.div>
          <motion.div
             initial={{ opacity: 0 }}
@@ -54,7 +57,7 @@ export default function Portfolio() {
                      onClick={(e) => activeTab(e, index)}
                      className={`${active === index ? 'active' : ''}`}
                   >
-                     {workNav}
+                     {workNav === 'Todos' ? `${t('buttons.all')}` : workNav}
                   </button>
                )
             })}
@@ -106,7 +109,7 @@ export default function Portfolio() {
          >
             <div className="talk_left">
                <h3>
-                  Então vamos falar sobre <br /> <span>meus próximos projetos</span>
+                  {t('talk.label')} <br /> <span>{t('talk.span')}</span>
                </h3>
             </div>
             <motion.div
@@ -114,7 +117,7 @@ export default function Portfolio() {
                transition={{ duration: 0.3 }}
                className="talk_right"
             >
-               <a href="#contact">Contate-me</a>
+               <a href="#contact">{t('talk.button.label')}</a>
             </motion.div>
          </motion.div>
       </div>

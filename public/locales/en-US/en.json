@@ -36,5 +36,19 @@
          "github": "Commits on Github",
          "courses": "Completed certified courses"
       }
+   },
+   "portfolio": {
+      "title": "MY WORK",
+      "description": "Incredible Projects",
+      "buttons": {
+         "all": "All"
+      },
+      "talk": {
+         "label": "So let's talk about",
+         "span": "my next projects",
+         "button": {
+            "label": "Contact me"
+         }
+      }
    }
 }

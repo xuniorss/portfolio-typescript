@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
-import { experiences, finishes, graduations, icons } from '../../../utils/skills'
-import './skills.scss'
 import { useTranslation } from 'react-i18next'
 import '../../../../public/locales/i18n'
-import { GraduationsComponent } from '../../Skills/Graduations'
+import { experiences, icons } from '../../../utils/skills'
 import { FinishesComponent } from '../../Skills/Finishes'
+import { GraduationsComponent } from '../../Skills/Graduations'
+import './skills.scss'
 
 export default function Skills() {
    const [active, setActive] = useState(1)
