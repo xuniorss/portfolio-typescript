@@ -1,13 +1,8 @@
 import { FaCss3, FaFigma, FaHtml5, FaNodeJs, FaReact, FaSass } from 'react-icons/fa'
-
 import { SiAdonisjs, SiJavascript, SiPostgresql, SiTypescript } from 'react-icons/si'
 import { TbBrandNextjs, TbBrandReactNative } from 'react-icons/tb'
-import {
-   ExperiencesProps,
-   FinishesProps,
-   GraduationsProps,
-   IconsPropsSkills,
-} from '../../models/Skills'
+
+import { ExperiencesProps, FinishesProps, GraduationsProps, IconsPropsSkills } from '../../models/Skills'
 
 export const icons: Array<IconsPropsSkills> = [
    { icon: FaHtml5 },

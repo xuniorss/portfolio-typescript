@@ -1,12 +1,14 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
-import { useForm, SubmitHandler } from 'react-hook-form'
+import { SubmitHandler, useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
-import '../../../../public/locales/i18n'
+
 import { SendEmailProps } from '../../../models/Contact'
 import { emailApi } from '../../../services/sendEmail'
 import { contacts } from '../../../utils/contact'
 import { SocialIcons } from '../../SocialIcons'
+
+import '../../../../public/locales/i18n'
 import './contact.scss'
 
 export default function Contact() {
@@ -26,8 +28,6 @@ export default function Contact() {
          console.log(error)
       }
    }
-
-   console.log(loading)
 
    return (
       <div className="container" id="contact">
@@ -66,8 +66,9 @@ export default function Contact() {
                <motion.div
                   initial={{ x: 0, opacity: 0 }}
                   whileInView={{ x: [150, 0], opacity: 1 }}
-                  transition={{ duration: 1 }}
+                  transition={{ duration: loading ? 0.2 : 1 }}
                   className="contact_right"
+                  animate={{ opacity: loading ? 0 : 1, x: loading ? -50 : 0 }}
                >
                   <h3>{t('form.text')}</h3>
                   <div className="row">
@@ -106,10 +107,24 @@ export default function Contact() {
                   </div>
                   {!loading ? (
                      <div className="btn">
-                        <button type="submit">{t('form.button.label')}</button>
+                        <motion.button
+                           type="submit"
+                           whileHover={{ scale: [null, 1.3, 1.2] }}
+                           transition={{ duration: 0.3 }}
+                        >
+                           {t('form.button.label')}
+                        </motion.button>
                      </div>
                   ) : (
-                     <p>Enviando...</p>
+                     <motion.p
+                        animate={{
+                           opacity: 1,
+                           x: 0,
+                        }}
+                        transition={{ duration: 0.2 }}
+                     >
+                        Enviando...
+                     </motion.p>
                   )}
                </motion.div>
             </form>

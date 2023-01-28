@@ -1,5 +1,7 @@
-import { finishes } from '../../../utils/skills'
 import { useTranslation } from 'react-i18next'
+
+import { finishes } from '../../../utils/skills'
+
 import '../../../../public/locales/i18n'
 
 export function FinishesComponent() {
