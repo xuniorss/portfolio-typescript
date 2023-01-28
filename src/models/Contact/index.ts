@@ -5,3 +5,11 @@ export interface ContactProps {
    icon: IconType
    infoText: string
 }
+
+export interface SendEmailProps {
+   name: string
+   lastName: string
+   contactNumber?: string
+   email: string
+   message: string
+}

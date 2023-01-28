@@ -1,12 +1,33 @@
 import { motion } from 'framer-motion'
+import { useState } from 'react'
+import { useForm, SubmitHandler } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
 import '../../../../public/locales/i18n'
+import { SendEmailProps } from '../../../models/Contact'
+import { emailApi } from '../../../services/sendEmail'
 import { contacts } from '../../../utils/contact'
 import { SocialIcons } from '../../SocialIcons'
 import './contact.scss'
 
 export default function Contact() {
    const { t } = useTranslation('contact')
+   const [loading, setLoading] = useState(false)
+
+   const { handleSubmit, reset, register } = useForm<SendEmailProps>()
+
+   const onSubmit: SubmitHandler<SendEmailProps> = (data) => {
+      try {
+         setLoading(true)
+         emailApi.sandEmail(data).then(() => {
+            reset()
+            setLoading(false)
+         })
+      } catch (error) {
+         console.log(error)
+      }
+   }
+
+   console.log(loading)
 
    return (
       <div className="container" id="contact">
@@ -41,32 +62,57 @@ export default function Contact() {
                   <SocialIcons />
                </div>
             </motion.div>
-            <motion.div
-               initial={{ x: 0, opacity: 0 }}
-               whileInView={{ x: [150, 0], opacity: 1 }}
-               transition={{ duration: 1 }}
-               className="contact_right"
-            >
-               <h3>{t('form.text')}</h3>
-               <div className="row">
-                  <input type="text" placeholder={`${t('form.name')}`} />
-                  <input type="text" placeholder={`${t('form.sobrenome')}`} />
-               </div>
-               <div className="row">
-                  <input type="text" placeholder={`${t('form.number-contact')}`} />
-                  <input type="email" placeholder={`${t('form.email')}`} />
-               </div>
-               <div className="row">
-                  <textarea placeholder={`${t('form.message')}`}></textarea>
-               </div>
+            <form onSubmit={handleSubmit(onSubmit)}>
                <motion.div
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ duration: 0.3 }}
-                  className="btn"
+                  initial={{ x: 0, opacity: 0 }}
+                  whileInView={{ x: [150, 0], opacity: 1 }}
+                  transition={{ duration: 1 }}
+                  className="contact_right"
                >
-                  <a href="#">{t('form.button.label')}</a>
+                  <h3>{t('form.text')}</h3>
+                  <div className="row">
+                     <input
+                        type="text"
+                        autoComplete="off"
+                        {...register('name', { required: true })}
+                        placeholder={`${t('form.name')}`}
+                     />
+                     <input
+                        type="text"
+                        autoComplete="off"
+                        {...register('lastName', { required: true })}
+                        placeholder={`${t('form.sobrenome')}`}
+                     />
+                  </div>
+                  <div className="row">
+                     <input
+                        type="text"
+                        autoComplete="off"
+                        {...register('contactNumber', { required: false })}
+                        placeholder={`${t('form.number-contact')}`}
+                     />
+                     <input
+                        type="email"
+                        autoComplete="off"
+                        {...register('email', { required: true })}
+                        placeholder={`${t('form.email')}`}
+                     />
+                  </div>
+                  <div className="row">
+                     <textarea
+                        {...register('message', { required: true })}
+                        placeholder={`${t('form.message')}`}
+                     ></textarea>
+                  </div>
+                  {!loading ? (
+                     <div className="btn">
+                        <button type="submit">{t('form.button.label')}</button>
+                     </div>
+                  ) : (
+                     <p>Enviando...</p>
+                  )}
                </motion.div>
-            </motion.div>
+            </form>
          </div>
       </div>
    )
