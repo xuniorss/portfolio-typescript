@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
+import { toast } from 'react-toastify'
 
 import { SendEmailProps } from '../../../models/Contact'
 import { emailApi } from '../../../services/sendEmail'
@@ -17,13 +18,20 @@ export default function Contact() {
 
    const { handleSubmit, reset, register } = useForm<SendEmailProps>()
 
-   const onSubmit: SubmitHandler<SendEmailProps> = (data) => {
+   const onSubmit: SubmitHandler<SendEmailProps> = async (data) => {
       try {
          setLoading(true)
-         emailApi.sandEmail(data).then(() => {
-            reset()
-            setLoading(false)
-         })
+         await toast.promise(
+            emailApi.sandEmail(data).then(() => {
+               reset()
+               setLoading(false)
+            }),
+            {
+               pending: 'Enviando...✈️',
+               success: 'Mensagem enviada, obrigado! 👌',
+               error: 'Algo deu errado. 🤯',
+            }
+         )
       } catch (error) {
          console.log(error)
       }
@@ -75,12 +83,14 @@ export default function Contact() {
                      <input
                         type="text"
                         autoComplete="off"
+                        disabled={loading}
                         {...register('name', { required: true })}
                         placeholder={`${t('form.name')}`}
                      />
                      <input
                         type="text"
                         autoComplete="off"
+                        disabled={loading}
                         {...register('lastName', { required: true })}
                         placeholder={`${t('form.sobrenome')}`}
                      />
@@ -89,43 +99,36 @@ export default function Contact() {
                      <input
                         type="text"
                         autoComplete="off"
+                        disabled={loading}
                         {...register('contactNumber', { required: false })}
                         placeholder={`${t('form.number-contact')}`}
                      />
                      <input
                         type="email"
                         autoComplete="off"
+                        disabled={loading}
                         {...register('email', { required: true })}
                         placeholder={`${t('form.email')}`}
                      />
                   </div>
                   <div className="row">
                      <textarea
+                        disabled={loading}
                         {...register('message', { required: true })}
                         placeholder={`${t('form.message')}`}
                      ></textarea>
                   </div>
-                  {!loading ? (
-                     <div className="btn">
-                        <motion.button
-                           type="submit"
-                           whileHover={{ scale: [null, 1.3, 1.2] }}
-                           transition={{ duration: 0.3 }}
-                        >
-                           {t('form.button.label')}
-                        </motion.button>
-                     </div>
-                  ) : (
-                     <motion.p
-                        animate={{
-                           opacity: 1,
-                           x: 0,
-                        }}
-                        transition={{ duration: 0.2 }}
+
+                  <div className="btn">
+                     <motion.button
+                        type="submit"
+                        hidden={loading}
+                        whileHover={{ scale: [null, 1.3, 1.2] }}
+                        transition={{ duration: 0.3 }}
                      >
-                        Enviando...
-                     </motion.p>
-                  )}
+                        {t('form.button.label')}
+                     </motion.button>
+                  </div>
                </motion.div>
             </form>
          </div>
