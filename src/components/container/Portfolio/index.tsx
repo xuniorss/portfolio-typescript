@@ -2,9 +2,11 @@ import { motion } from 'framer-motion'
 import { MouseEvent, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { FiEye, FiGithub } from 'react-icons/fi'
-import '../../../../public/locales/i18n'
+
 import { workImagesProps, workNavs } from '../../../models/Portfolio'
 import { workImages } from '../../../utils/portfolio'
+
+import '../../../../public/locales/i18n'
 import './portfolio.scss'
 
 export default function Portfolio() {

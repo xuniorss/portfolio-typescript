@@ -1,13 +1,15 @@
 import { getDownloadURL, ref } from 'firebase/storage'
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
+
 import portfolio2 from '../../../assets/portfolio2.jpeg'
 import { useAge } from '../../../hooks/useAge'
 import storage from '../../../services/api/firebase'
 import { bios } from '../../../utils/about'
-import './about.scss'
-import { useTranslation } from 'react-i18next'
+
 import '../../../../public/locales/i18n'
+import './about.scss'
 
 export default function About() {
    const [download, setDownload] = useState('')
