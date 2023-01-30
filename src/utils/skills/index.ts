@@ -26,7 +26,7 @@ export const experiences: Array<ExperiencesProps> = [
 
 export const finishes: Array<FinishesProps> = [
    { id: 1, number: '3+', itemName: 'Anos como programador' },
-   { id: 2, number: '7+', itemName: 'Meses como Fullstack developer' },
+   { id: 2, number: '2+', itemName: 'Anos como Fullstack developer' },
    { id: 3, number: '965+', itemName: 'Commits no Github' },
    { id: 4, number: '10+', itemName: 'Cursos certificados concluídos' },
 ]
