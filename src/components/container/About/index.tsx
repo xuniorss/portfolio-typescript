@@ -1,4 +1,4 @@
-import { getDownloadURL, ref } from 'firebase/storage'
+import { getDownloadURL, getMetadata, ref } from 'firebase/storage'
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -13,6 +13,7 @@ import './about.scss'
 
 export default function About() {
    const [download, setDownload] = useState('')
+   const [kb, setKb] = useState(0)
    const { age } = useAge()
    const { t } = useTranslation('about')
 
@@ -21,6 +22,11 @@ export default function About() {
          setDownload(url)
       })
    }, [])
+
+   getMetadata(ref(storage, 'curriculoGilberto.pdf')).then((metadata) => {
+      const kb = Math.round(metadata.size / 1024)
+      setKb(kb)
+   })
 
    return (
       <div className="container" id="about">
@@ -73,7 +79,7 @@ export default function About() {
                   transition={{ duration: 0.3 }}
                   target="_blank"
                >
-                  {t('button.label')}
+                  {`${t('button.label')} (${kb} kb)`}
                </motion.a>
             </motion.div>
          </div>
