@@ -1,6 +1,6 @@
 import { FaCss3, FaFigma, FaHtml5, FaNodeJs, FaReact, FaSass } from 'react-icons/fa'
-import { SiAdonisjs, SiJavascript, SiPostgresql, SiTypescript } from 'react-icons/si'
-import { TbBrandNextjs, TbBrandReactNative } from 'react-icons/tb'
+import { SiAdonisjs, SiJavascript, SiPostgresql, SiTailwindcss, SiTypescript } from 'react-icons/si'
+import { TbBrandNextjs } from 'react-icons/tb'
 
 import { ExperiencesProps, FinishesProps, GraduationsProps, IconsPropsSkills } from '../../models/Skills'
 
@@ -11,7 +11,7 @@ export const icons: Array<IconsPropsSkills> = [
    { icon: SiJavascript },
    { icon: SiTypescript },
    { icon: FaReact },
-   { icon: TbBrandReactNative },
+   { icon: SiTailwindcss },
    { icon: TbBrandNextjs },
    { icon: FaNodeJs },
    { icon: SiAdonisjs },
@@ -25,9 +25,9 @@ export const experiences: Array<ExperiencesProps> = [
 ]
 
 export const finishes: Array<FinishesProps> = [
-   { id: 1, number: '3+', itemName: 'Anos como programador' },
-   { id: 2, number: '2+', itemName: 'Anos como Fullstack developer' },
-   { id: 3, number: '965+', itemName: 'Commits no Github' },
+   { id: 1, number: '5+', itemName: 'Anos como programador' },
+   { id: 2, number: '4+', itemName: 'Anos como Fullstack developer' },
+   { id: 3, number: '1.2k+', itemName: 'Commits no Github' },
    { id: 4, number: '10+', itemName: 'Cursos certificados concluídos' },
 ]
 
@@ -43,6 +43,6 @@ export const graduations: Array<GraduationsProps> = [
    },
    { id: 5, year: '2022', academy: 'Udemy', course: 'ReactJs, React Native, NextJs & Typescript' },
    { id: 6, year: '2022', academy: 'Udemy', course: 'NodeJs com Express & AdonisJs' },
-   // { id: 7, year: '2022', academy: 'Udemy', course: '' },
+   { id: 7, year: '2023', academy: 'PUC Minas', course: 'Pós graduação em Engenharia de Software' },
    // { id: 9, year: '2022', academy: 'Udemy', course: 'AdonisJs' },
 ]

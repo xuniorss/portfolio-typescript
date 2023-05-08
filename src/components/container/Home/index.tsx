@@ -1,9 +1,11 @@
 import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
-import '../../../../public/locales/i18n'
+
 import portfolio from '../../../assets/portfolio.jpg'
 import { moveVariants } from '../../../utils/home'
 import { TypewriterComponent } from '../../Typewriter'
+
+import '../../../../public/locales/i18n'
 import './home.scss'
 
 export default function Home() {
@@ -24,7 +26,7 @@ export default function Home() {
             <h3 className="name">
                {t('title')} <span>Gilberto Fortunato</span>
             </h3>
-            <span className="job">Fullstack Developer</span>
+            <span className="job">Engenheiro de Software</span>
             <span className="text">
                <TypewriterComponent text={t('slogan')} />
             </span>
