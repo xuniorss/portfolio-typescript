@@ -82,22 +82,26 @@ export default function Portfolio() {
                         className="hoverLayer"
                      >
                         <motion.a
-                           href="#"
+                           href={work.repoLink}
                            whileInView={{ scale: [0, 1] }}
                            whileHover={{ scale: [1, 1.1] }}
                            transition={{ duration: 0.3 }}
+                           target="_blank"
                         >
                            <FiGithub />
                         </motion.a>
 
-                        <motion.a
-                           href="#"
-                           whileInView={{ scale: [0, 1] }}
-                           whileHover={{ scale: [1, 1.1] }}
-                           transition={{ duration: 0.3 }}
-                        >
-                           <FiEye />
-                        </motion.a>
+                        {work.deployUrl && (
+                           <motion.a
+                              href={work.deployUrl}
+                              whileInView={{ scale: [0, 1] }}
+                              whileHover={{ scale: [1, 1.1] }}
+                              transition={{ duration: 0.3 }}
+                              target="_blank"
+                           >
+                              <FiEye />
+                           </motion.a>
+                        )}
                      </motion.div>
                   </div>
                )

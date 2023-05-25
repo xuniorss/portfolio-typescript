@@ -1,13 +1,11 @@
-export const workNavs = ['Todos', 'Web', 'App']
+export const workNavs = ['Todos', 'Web']
+// export const workNavs = ['Todos', 'Web', 'App']
 
-enum WorkCategory {
-   WEB = 'web',
-   APP = 'app',
-}
-
-export interface workImagesProps {
+export type workImagesProps = {
    id: number
    img: string
    name: string
-   category: string
+   category: 'web' | 'app'
+   repoLink: string
+   deployUrl?: string | null
 }

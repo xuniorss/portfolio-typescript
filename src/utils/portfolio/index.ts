@@ -1,60 +1,93 @@
 import cep from '../../assets/cep-app.jpg'
 import combustivel from '../../assets/combustivel-app.jpg'
+import empireburger from '../../assets/empire-burger.png'
+import airbnb from '../../assets/airbnb.png'
+import spacetime from '../../assets/spacetime.png'
+import ecommerce from '../../assets/ecommerce.png'
+import promptopia from '../../assets/promptopia.png'
+import twitter from '../../assets/twitter.png'
 import financas from '../../assets/financas-app.png'
 import instagram from '../../assets/instagram-app.png'
 import nubank from '../../assets/nubank-app.png'
-import pdv from '../../assets/pdv-web.jpg'
-import planilhas from '../../assets/planilhas-web.png'
-import icontrol from '../../assets/sistema-icontrol-web.png'
 import { workImagesProps } from '../../models/Portfolio'
 
 export const workImages: Array<workImagesProps> = [
    {
       id: 1,
-      img: combustivel,
-      name: 'Combustível App',
-      category: 'app',
+      img: empireburger,
+      name: 'Empireburger',
+      category: 'web',
+      repoLink: 'https://github.com/xuniorss/empire-burger',
+      deployUrl: 'https://empire-burger-dusky.vercel.app/',
    },
    {
       id: 2,
-      img: cep,
-      name: 'CEP App',
-      category: 'app',
+      img: spacetime,
+      name: 'Spacetime',
+      category: 'web',
+      repoLink: 'https://github.com/xuniorss/nlw-spacetime-rocketseat-web',
    },
    {
       id: 3,
-      img: financas,
-      name: 'project 3',
-      category: 'app',
+      img: airbnb,
+      name: 'Airbnb',
+      category: 'web',
+      repoLink: 'https://github.com/xuniorss/airbnb-clone',
    },
    {
       id: 4,
-      img: pdv,
-      name: 'PDV Web',
+      img: twitter,
+      name: 'Twitter',
       category: 'web',
+      repoLink: 'https://github.com/xuniorss/twitter-clone',
    },
    {
       id: 5,
-      img: nubank,
-      name: 'Nubank App',
-      category: 'app',
+      img: ecommerce,
+      name: 'Ecommerce',
+      category: 'web',
+      repoLink: 'https://github.com/xuniorss/ecommerce-nextjs',
    },
    {
       id: 6,
-      img: planilhas,
-      name: 'Planilhas Web',
+      img: promptopia,
+      name: 'Promptopia',
       category: 'web',
+      repoLink: 'https://github.com/xuniorss/share_prompts',
    },
-   {
-      id: 7,
-      img: instagram,
-      name: 'Instagram App',
-      category: 'app',
-   },
-   {
-      id: 8,
-      img: icontrol,
-      name: 'Sistema I-Control',
-      category: 'web',
-   },
+   // {
+   //    id: 7,
+   //    img: combustivel,
+   //    name: 'Combustível App',
+   //    category: 'app',
+   //    repoLink: '#',
+   // },
+   // {
+   //    id: 8,
+   //    img: cep,
+   //    name: 'CEP App',
+   //    category: 'app',
+   //    repoLink: '#',
+   // },
+   // {
+   //    id: 9,
+   //    img: financas,
+   //    name: 'project 3',
+   //    category: 'app',
+   //    repoLink: '#',
+   // },
+   // {
+   //    id: 10,
+   //    img: nubank,
+   //    name: 'Nubank App',
+   //    category: 'app',
+   //    repoLink: '#',
+   // },
+   // {
+   //    id: 11,
+   //    img: instagram,
+   //    name: 'Instagram App',
+   //    category: 'app',
+   //    repoLink: '#',
+   // },
 ]
