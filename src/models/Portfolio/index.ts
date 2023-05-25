@@ -1,5 +1,5 @@
-// export const workNavs = ['Todos', 'Web']
-export const workNavs = ['Todos', 'Web', 'App']
+export const workNavs = ['Todos', 'Web']
+// export const workNavs = ['Todos', 'Web', 'App']
 
 export type workImagesProps = {
    id: number
