@@ -1,14 +1,15 @@
+import airbnb from '../../assets/airbnb.png'
+import carshowcase from '../../assets/car-showcase.png'
 import cep from '../../assets/cep-app.jpg'
 import combustivel from '../../assets/combustivel-app.jpg'
-import empireburger from '../../assets/empire-burger.png'
-import airbnb from '../../assets/airbnb.png'
-import spacetime from '../../assets/spacetime.png'
 import ecommerce from '../../assets/ecommerce.png'
-import promptopia from '../../assets/promptopia.png'
-import twitter from '../../assets/twitter.png'
+import empireburger from '../../assets/empire-burger.png'
 import financas from '../../assets/financas-app.png'
 import instagram from '../../assets/instagram-app.png'
 import nubank from '../../assets/nubank-app.png'
+import promptopia from '../../assets/promptopia.png'
+import spacetime from '../../assets/spacetime.png'
+import twitter from '../../assets/twitter.png'
 import { workImagesProps } from '../../models/Portfolio'
 
 export const workImages: Array<workImagesProps> = [
@@ -55,13 +56,14 @@ export const workImages: Array<workImagesProps> = [
       category: 'web',
       repoLink: 'https://github.com/xuniorss/share_prompts',
    },
-   // {
-   //    id: 7,
-   //    img: combustivel,
-   //    name: 'Combustível App',
-   //    category: 'app',
-   //    repoLink: '#',
-   // },
+   {
+      id: 7,
+      img: carshowcase,
+      name: 'CarHub',
+      category: 'web',
+      repoLink: 'https://github.com/xuniorss/car_showcase',
+      deployUrl: 'https://car-showcase-alpha.vercel.app/',
+   },
    // {
    //    id: 8,
    //    img: cep,
