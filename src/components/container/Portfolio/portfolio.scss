@@ -43,6 +43,7 @@
       margin-left: auto;
       margin-right: auto;
       position: relative;
+      border-radius: 5px;
 
       @media screen and (max-width: 600px) {
          max-width: 350px;
@@ -52,6 +53,7 @@
          width: 100%;
          height: 100%;
          object-fit: cover;
+         border-radius: 5px;
       }
 
       .hoverLayer {
@@ -63,9 +65,20 @@
          top: 0;
          left: 0;
          display: flex;
+         flex-direction: column;
          gap: 1.5rem;
          justify-content: center;
          align-items: center;
+         border-radius: 5px;
+
+         .projectName {
+            color: white;
+         }
+
+         .hoverLayerContent {
+            display: flex;
+            gap: 7px;
+         }
 
          a {
             width: 40px;

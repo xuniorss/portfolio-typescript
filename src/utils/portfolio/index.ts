@@ -6,6 +6,7 @@ import ecommerce from '../../assets/ecommerce.png'
 import empireburger from '../../assets/empire-burger.png'
 import financas from '../../assets/financas-app.png'
 import instagram from '../../assets/instagram-app.png'
+import messenger from '../../assets/messenger-clone.png'
 import nubank from '../../assets/nubank-app.png'
 import promptopia from '../../assets/promptopia.png'
 import spacetime from '../../assets/spacetime.png'
@@ -31,15 +32,15 @@ export const workImages: Array<workImagesProps> = [
    {
       id: 3,
       img: airbnb,
-      name: 'Airbnb',
-      category: 'web',
+      name: 'Airbnb Clone',
+      category: 'clones',
       repoLink: 'https://github.com/xuniorss/airbnb-clone',
    },
    {
       id: 4,
       img: twitter,
-      name: 'Twitter',
-      category: 'web',
+      name: 'Twitter Clone',
+      category: 'clones',
       repoLink: 'https://github.com/xuniorss/twitter-clone',
    },
    {
@@ -64,13 +65,14 @@ export const workImages: Array<workImagesProps> = [
       repoLink: 'https://github.com/xuniorss/car_showcase',
       deployUrl: 'https://car-showcase-alpha.vercel.app/',
    },
-   // {
-   //    id: 8,
-   //    img: cep,
-   //    name: 'CEP App',
-   //    category: 'app',
-   //    repoLink: '#',
-   // },
+   {
+      id: 8,
+      img: messenger,
+      name: 'Messenger Clone',
+      category: 'clones',
+      repoLink: 'https://github.com/xuniorss/messenger-clone',
+      deployUrl: 'https://messenger-clone-smoky-alpha.vercel.app/',
+   },
    // {
    //    id: 9,
    //    img: financas,
