@@ -10,6 +10,7 @@ import messenger from '../../assets/messenger-clone.png'
 import nubank from '../../assets/nubank-app.png'
 import promptopia from '../../assets/promptopia.png'
 import spacetime from '../../assets/spacetime.png'
+import spotify from '../../assets/spotify-clone.png'
 import twitter from '../../assets/twitter.png'
 import { workImagesProps } from '../../models/Portfolio'
 
@@ -73,13 +74,13 @@ export const workImages: Array<workImagesProps> = [
       repoLink: 'https://github.com/xuniorss/messenger-clone',
       deployUrl: 'https://messenger-clone-smoky-alpha.vercel.app/',
    },
-   // {
-   //    id: 9,
-   //    img: financas,
-   //    name: 'project 3',
-   //    category: 'app',
-   //    repoLink: '#',
-   // },
+   {
+      id: 9,
+      img: spotify,
+      name: 'Spotify Clone',
+      category: 'clones',
+      repoLink: 'https://github.com/xuniorss/spotify-clone',
+   },
    // {
    //    id: 10,
    //    img: nubank,
